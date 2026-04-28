@@ -1,0 +1,12 @@
+package temperature;
+
+public class kelvin_celsius {
+
+	public static void main(String[] args) {
+double k = 300;
+		
+        System.out.println("C = " + (k - 273));
+
+	}
+
+}
