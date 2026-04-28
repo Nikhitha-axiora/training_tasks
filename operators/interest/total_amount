@@ -1,0 +1,12 @@
+package interest;
+
+public class total_amount {
+
+	public static void main(String[] args) {
+		int p = 20000, r = 3, t = 3;
+        double si = (p * r * t) / 100;
+        System.out.println("Amount = " + (p+si));
+
+	}
+
+}
