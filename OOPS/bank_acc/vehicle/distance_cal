@@ -1,0 +1,40 @@
+package vehicle;
+
+public class distance_calculation {
+//includes speed, fuel, distance
+	
+		private double speed;
+		 
+		 public distance_calculation(double speed) {
+			 
+			 this.speed = speed;
+			 		 
+		 }
+		
+		 public void setSpeed(double speed) {
+		        this.speed = speed;
+		 }
+		 
+		 public double calculateDistance(double time) {
+		        return speed * time;
+		    }
+		 
+		 public double getSpeed() {
+		        return speed;
+		    }
+		 
+		 public double fuelUsed(double distance) {
+		        return distance / 10;
+		 }
+		 
+			
+		public static void main(String[] args) {
+			distance_calculation v = new distance_calculation(60);
+
+	        double distance = v.calculateDistance(2);
+
+	        System.out.println("Distance: " + distance);
+	        System.out.println("Fuel Used: " + v.fuelUsed(distance));
+	}
+
+}
