@@ -1,0 +1,33 @@
+package Variables;
+
+public class VariabledeclarationInitialization {
+
+	public static void main(String[] args) {
+		
+		
+//		//variable declaration- only creating a variable
+//		int age; //declares an integer variable named 'age'
+//		double salary; // declares a double variable named 'saalry'
+//		String name; //declares a string variables 'name'
+		
+		//variable initialization- assigning values to the variables
+		int age= 35;
+		double salary=100000;
+		String name= "Diva";
+		
+		
+		System.out.println(age);
+		System.out.println(salary);
+		System.out.println(name);
+		
+		int Age;
+		String Dept;
+		
+		Age= 20;
+		Dept= "Data science";
+		 
+		System.out.println("Age :"+Age);;
+		System.out.println("Department :"+Dept );;
+		
+	}
+}
