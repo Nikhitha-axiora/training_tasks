@@ -1,0 +1,16 @@
+package interest;
+
+public class simpleinterest {
+
+	public static void main(String[] args) {
+		 //p= principal, t=time, r=rate
+		int p = 200000, r = 4, t = 3;
+        double si = (p * r * t) / 100; //si= simple interest
+        
+        System.out.println("SI = " + si);
+
+		
+
+	}
+
+}
