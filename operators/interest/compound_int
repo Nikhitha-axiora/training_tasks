@@ -1,0 +1,12 @@
+package interest;
+
+public class compoundinterest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		double p =20000, t =3, r =4;
+		double ci = p * Math.pow((1 + r/100), t);
+		System.out.println("CI = "+ ci);
+	}
+
+}
