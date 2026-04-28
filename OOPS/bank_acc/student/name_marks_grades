@@ -1,0 +1,40 @@
+package student;
+
+public class name_marks_grades {
+
+	
+		String name;
+		int marks;
+		
+		
+		void setdata(String n, int m) {
+			
+			
+			name = n;
+			marks = m;
+					
+		}
+		void Grade() {
+			
+			if(marks >= 90)
+			System.out.println(name + "Grade = A");
+			else if(marks >= 75)
+			System.out.println(name + " Grade = B");
+			else if (marks >= 60)
+				System.out.println(name + "Grade = C  ");
+			else
+				System.out.println(name + "Grade = Fail ");
+			
+						}
+			
+		
+		public static void main(String[] args) {
+			
+			name_marks_grades  s = new name_marks_grades ();
+			s.setdata(" nikita ",  90);
+			s.Grade();
+		}
+
+	
+
+}
