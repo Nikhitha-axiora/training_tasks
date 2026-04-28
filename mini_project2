@@ -1,0 +1,90 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
+public class password_email_validatorapp {
+
+    // User class (inner class)
+    static class User {
+        String email;
+        String password;
+
+        User(String email, String password) {
+            this.email = email;
+            this.password = password;
+        }
+    }
+
+    // Password Validator
+    static class PasswordValidator {
+        static void validate(String password) throws Exception {
+            if (password.length() < 8)
+                throw new Exception("Password must be at least 8 characters");
+
+            if (!Pattern.compile("[A-Z]").matcher(password).find())
+                throw new Exception("Must contain at least one uppercase letter");
+
+            if (!Pattern.compile("[0-9]").matcher(password).find())
+                throw new Exception("Must contain at least one number");
+
+            if (!Pattern.compile("[^a-zA-Z0-9]").matcher(password).find())
+                throw new Exception("Must contain at least one special character");
+        }
+    }
+
+    // Email Validator
+    static class EmailValidator {
+        static void validate(String email) throws Exception {
+
+            String regex = "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$";
+
+            if (!Pattern.matches(regex, email))
+                throw new Exception("Invalid email format");
+
+            if (!(email.endsWith("@gmail.com") || email.endsWith("@outlook.com")))
+                throw new Exception("Only gmail.com or outlook.com allowed");
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        ArrayList<User> users = new ArrayList<>();
+
+        System.out.println("=== User Registration ===");
+
+        while (true) {
+            try {
+                System.out.print("Enter Email: ");
+                String email = sc.nextLine();
+
+                System.out.print("Enter Password: ");
+                String password = sc.nextLine();
+
+                EmailValidator.validate(email);
+                PasswordValidator.validate(password);
+
+                users.add(new User(email, password));
+
+                System.out.println("✅ Registered Successfully\n");
+
+            } catch (Exception e) {
+                System.out.println("❌ " + e.getMessage() + "\n");
+            }
+
+            System.out.print("Add another user? (yes/no): ");
+            String choice = sc.nextLine();
+
+            if (!choice.equalsIgnoreCase("yes"))
+                break;
+        }
+
+        System.out.println("\n=== Registered Users ===");
+        for (User u : users) {
+            System.out.println(u.email);
+        }
+
+        sc.close();
+    }
+}
+
