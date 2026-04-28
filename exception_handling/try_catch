@@ -1,0 +1,17 @@
+package exception_handling;
+
+public class trycatch {
+
+	public static void main(String[] args) {
+		try {
+            int a = 10, b = 1;
+            int result = a / b; 
+            System.out.println(result);
+        } catch (ArithmeticException e) {
+            System.out.println("Error: Cannot divide by zero");
+        }
+
+        System.out.println("Program continues...");
+	}
+
+}
